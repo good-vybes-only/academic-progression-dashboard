@@ -642,76 +642,96 @@ hr{
 /* ===== Mobile layout tweaks (phones) ===== */
 @media (max-width: 640px) {
 
+  html, body, #root{
+    height: auto;
+  }
+
   body{
     font-size: 14px;
   }
 
   .container{
-    margin: 16px auto 40px;
+    max-width: 480px;
+    margin: 12px auto 28px;
     padding: 0 12px;
   }
 
-  /* Top bar: stack title + buttons */
+  /* TOP BAR */
   .topbar{
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 14px 16px;
+    align-items: stretch;
+    gap: 8px;
+    padding: 12px 14px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+
+  .brand{
+    font-size: 18px;
+    line-height: 1.2;
   }
 
   .actions{
     width: 100%;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
 
   .actions .btn{
     width: 100%;
     justify-content: center;
+    text-align: center;
+    padding-block: 8px;
+    font-size: 13px;
   }
 
-  /* Tabs: 2 per row, easier to tap */
+  /* TABS */
   .tabs{
-    flex-wrap: wrap;
+    margin-top: 12px;
     padding: 4px;
-    gap: 6px;
+    gap: 4px;
+    border-radius: 14px;
   }
 
   .tab{
-    flex: 1 0 calc(50% - 6px);
+    flex: 1 0 calc(50% - 4px);
+    font-size: 12px;
+    padding: 7px 6px;
     text-align: center;
-    font-size: 13px;
-    padding: 8px 10px;
   }
 
-  /* Cards: slightly tighter padding & radius */
+  /* CARDS & GRIDS */
   .card,
   .kpi,
   .card.chart,
   .subject-shell,
   .setup-shell,
   .instructions-card{
-    padding: 14px 14px;
+    padding: 12px 12px;
     border-radius: 14px;
+    margin-top: 10px;
   }
 
   .kpi .big{
     font-size: 26px;
   }
 
-  /* All grids become single-column */
+  .grid,
   .grid-2,
   .grid-3,
   .grid-4{
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
-  .subgrid{
+  .subgrid,
+  .subject-shell-grid{
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
-  /* Toolbars / select rows stack */
+  /* TOOLBARS / ROWS */
   .toolbar,
   .selectrow,
   .sliderwrap{
@@ -724,23 +744,28 @@ hr{
     width: 100%;
   }
 
-  /* Form rows: one item per line to avoid squish */
   .row{
     grid-template-columns: 1fr !important;
+    gap: 8px;
   }
 
-  /* Subject-wise info bar: smaller text */
   .helper{
     font-size: 13px;
   }
 
-  /* Tables: allow horizontal scroll instead of overflowing */
+  /* TABLES – allow sideways scroll if needed */
+  .subject-shell-inner,
+  .setup-shell{
+    overflow-x: auto;
+  }
+
   .table{
     font-size: 13px;
   }
 
-  .subject-shell-inner,
-  .setup-shell{
-    overflow-x: auto;
+  /* INSTRUCTIONS */
+  .instructions-list,
+  .instructions-steps{
+    font-size: 13px;
   }
 }
