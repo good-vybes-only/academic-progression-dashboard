@@ -639,3 +639,108 @@ hr{
   color: var(--text-hi);
 }
 
+/* ===== Mobile layout tweaks (phones) ===== */
+@media (max-width: 640px) {
+
+  body{
+    font-size: 14px;
+  }
+
+  .container{
+    margin: 16px auto 40px;
+    padding: 0 12px;
+  }
+
+  /* Top bar: stack title + buttons */
+  .topbar{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+
+  .actions{
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .actions .btn{
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Tabs: 2 per row, easier to tap */
+  .tabs{
+    flex-wrap: wrap;
+    padding: 4px;
+    gap: 6px;
+  }
+
+  .tab{
+    flex: 1 0 calc(50% - 6px);
+    text-align: center;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  /* Cards: slightly tighter padding & radius */
+  .card,
+  .kpi,
+  .card.chart,
+  .subject-shell,
+  .setup-shell,
+  .instructions-card{
+    padding: 14px 14px;
+    border-radius: 14px;
+  }
+
+  .kpi .big{
+    font-size: 26px;
+  }
+
+  /* All grids become single-column */
+  .grid-2,
+  .grid-3,
+  .grid-4{
+    grid-template-columns: 1fr;
+  }
+
+  .subgrid{
+    grid-template-columns: 1fr;
+  }
+
+  /* Toolbars / select rows stack */
+  .toolbar,
+  .selectrow,
+  .sliderwrap{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .sliderwrap .range{
+    width: 100%;
+  }
+
+  /* Form rows: one item per line to avoid squish */
+  .row{
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Subject-wise info bar: smaller text */
+  .helper{
+    font-size: 13px;
+  }
+
+  /* Tables: allow horizontal scroll instead of overflowing */
+  .table{
+    font-size: 13px;
+  }
+
+  .subject-shell-inner,
+  .setup-shell{
+    overflow-x: auto;
+  }
+}
