@@ -1,0 +1,13 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+
+# environment / OS
+.env
+.DS_Store
+
+# marks data (local only, don’t share)
+my_marks_setup.json
+*.marks.json
